@@ -1,3 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: url("../../images/sandDunes.jpg") no-repeat center/cover;
+  height: 100vh;
+}
+
+.sign-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sign-post {
+  background-color: gray;
+  height: 50vh;
+  width: 5rem;
+}
+
+.speed-limit-sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  position: absolute;
+  top: 15rem;
+  border: 1.5rem solid black;
+  padding: 2rem;
+  text-align: center;
+  width: fit-content;
+  height: 40vh;
+  z-index: 2;
+}
+.speed-limit-sign .sign-labels {
+  font-size: 4rem;
+}
+.speed-limit-sign .speed-limit-posting {
+  font-size: 8rem;
+  font-weight: 700;
+}
 
 /*# sourceMappingURL=styles.css.map */

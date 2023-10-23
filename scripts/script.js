@@ -1,5 +1,5 @@
 const generateSign = () => {
-	const body = document.querySelector("body");
+	const signWrapper = document.querySelector(".sign-wrapper");
 
 	const usSpeeds = [
 		5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85,
@@ -22,17 +22,20 @@ const generateSign = () => {
 	const signHeading = document.createElement("p");
 	const convertToUnit = document.createElement("p");
 	const postedSpeed = document.createElement("p");
-	signHeading.classList.add("sign-heading");
+  const postedSpeedUnit = document.createElement("p")
 	speedLimitSign.classList.add("speed-limit-sign");
+	signHeading.classList.add("sign-labels");
 	postedSpeed.classList.add("speed-limit-posting");
-	convertToUnit.classList.add("convert-to-unit");
+  postedSpeedUnit.classList.add("sign-labels")
+	convertToUnit.classList.add("sign-labels");
 
 	signHeading.textContent = "CONVERT";
 	postedSpeed.textContent = `${selectedCountrySpeeds[speedLimit]}`;
-	convertToUnit.textContent = `${selectRandomCountry === 0 ? "km/h" : "mph"}`;
+  postedSpeedUnit.textContent = `${selectRandomCountry === 0 ? "mph" : "km/h"}`
+	convertToUnit.textContent = `TO ${selectRandomCountry === 0 ? "km/h" : "mph"}`;
 
-	speedLimitSign.append(signHeading, postedSpeed, convertToUnit);
-	body.append(speedLimitSign);
+	speedLimitSign.append(signHeading, postedSpeed, postedSpeedUnit, convertToUnit);
+	signWrapper.append(speedLimitSign);
 };
 
 generateSign();
