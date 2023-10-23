@@ -15,6 +15,7 @@ body {
   align-items: flex-end;
   background: url("../../images/sandDunes.jpg") no-repeat center/cover;
   height: 100vh;
+  overflow: hidden;
 }
 
 .sign-wrapper {
@@ -42,7 +43,7 @@ body {
   padding: 2rem;
   text-align: center;
   width: fit-content;
-  height: 40vh;
+  height: 32rem;
   z-index: 2;
 }
 .speed-limit-sign .sign-labels {
