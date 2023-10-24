@@ -21,6 +21,9 @@ body {
   overflow: hidden;
 }
 
+.white-border-wrapper {
+  border: 0.2rem solid white;
+}
 .sign-wrapper {
   display: flex;
   justify-content: center;
@@ -34,20 +37,25 @@ body {
 }
 
 // speed limit sign
+.white-border-wrapper {
+  position: absolute;
+  top: 15rem;
+  border: 0.4rem solid white;
+  z-index: 2;
+
+}
+
 .speed-limit-sign {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: white;
-  position: absolute;
-  top: 15rem;
   border: 1.5rem solid black;
   padding: 2rem;
   text-align: center;
   width: fit-content;
   height: 32rem;
-  z-index: 2;
 
   .sign-labels {
     font-size: 4rem;

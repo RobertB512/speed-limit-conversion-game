@@ -1,5 +1,5 @@
 const generateSign = () => {
-	const signWrapper = document.querySelector(".sign-wrapper");
+	const whiteBorderWrapper = document.querySelector(".white-border-wrapper");
 
 	const usSpeeds = [
 		5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85,
@@ -35,7 +35,7 @@ const generateSign = () => {
 	convertToUnit.textContent = `TO ${selectRandomCountry === 0 ? "km/h" : "mph"}`;
 
 	speedLimitSign.append(signHeading, postedSpeed, postedSpeedUnit, convertToUnit);
-	signWrapper.append(speedLimitSign);
+	whiteBorderWrapper.append(speedLimitSign);
 };
 
 generateSign();
