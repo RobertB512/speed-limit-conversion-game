@@ -23,7 +23,7 @@ const generateSign = () => {
 	const convertToUnit = document.createElement("p");
 	const postedSpeed = document.createElement("p");
   const postedSpeedUnit = document.createElement("p")
-	speedLimitSign.classList.add("speed-limit-sign");
+	speedLimitSign.classList.add("speed-limit-sign", "sign");
 	signHeading.classList.add("sign-labels");
 	postedSpeed.classList.add("speed-limit-posting");
   postedSpeedUnit.classList.add("sign-labels")
@@ -37,5 +37,12 @@ const generateSign = () => {
 	speedLimitSign.append(signHeading, postedSpeed, postedSpeedUnit, convertToUnit);
 	whiteBorderWrapper.append(speedLimitSign);
 };
+
+// const handlePlayBtn = () => {
+//   const playBtn = querySelector(".play-btn")
+//   const
+
+// }
+
 
 generateSign();

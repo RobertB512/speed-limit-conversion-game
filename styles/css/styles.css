@@ -18,11 +18,8 @@ body {
   overflow: hidden;
 }
 
-.white-border-wrapper {
-  border: 0.2rem solid white;
-}
-
 .sign-wrapper {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,24 +32,30 @@ body {
   width: 5rem;
 }
 
-.white-border-wrapper {
+.speed-limit-sign-wrapper {
   position: absolute;
-  top: 15rem;
-  border: 0.4rem solid white;
-  z-index: 2;
+  right: 500rem;
 }
 
-.speed-limit-sign {
+.sign {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  top: 10rem;
   background-color: white;
-  border: 1.5rem solid black;
+  border-width: 1.5rem;
+  border-style: solid;
   padding: 2rem;
   text-align: center;
-  width: fit-content;
+  width: 26.4rem;
   height: 32rem;
+  z-index: 2;
+}
+
+.speed-limit-sign {
+  border-color: black;
 }
 .speed-limit-sign .sign-labels {
   font-size: 4rem;
@@ -60,6 +63,40 @@ body {
 .speed-limit-sign .speed-limit-posting {
   font-size: 8rem;
   font-weight: 700;
+}
+
+.how-to-play-sign {
+  gap: 1rem;
+  border-color: white;
+  border-width: 1rem;
+  background-color: green;
+  color: white;
+}
+.how-to-play-sign h2 {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+.how-to-play-sign p, .how-to-play-sign button {
+  font-size: 2rem;
+}
+.how-to-play-sign button {
+  color: white;
+  border: 0.2rem solid white;
+  padding: 0.5rem 2rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+.how-to-play-sign button:hover {
+  transform: rotate(-10deg);
+  transition: 0.2s;
+}
+
+.move-in-from-right {
+  left: 500rem;
+}
+
+.move-out-to-left {
+  left: 500rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

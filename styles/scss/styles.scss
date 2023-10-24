@@ -16,20 +16,22 @@ body {
   justify-content: center;
   align-items: flex-end;
   // flex-direction: column-reverse;
+  // position: relative;
   background: url("../../images/sandDunes.jpg") no-repeat center/cover;
   height: 100vh;
   overflow: hidden;
 }
 
-.white-border-wrapper {
-  border: 0.2rem solid white;
-}
+// general sign styles
 .sign-wrapper {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  // position: relative;
 }
+
 .sign-post {
   background-color: gray;
   height: 50vh;
@@ -37,25 +39,31 @@ body {
 }
 
 // speed limit sign
-.white-border-wrapper {
+.speed-limit-sign-wrapper {
   position: absolute;
-  top: 15rem;
-  border: 0.4rem solid white;
-  z-index: 2;
-
+  right: 500rem;
 }
 
-.speed-limit-sign {
+
+.sign {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  top: 10rem;
   background-color: white;
-  border: 1.5rem solid black;
+  border-width: 1.5rem;
+  border-style: solid;
   padding: 2rem;
   text-align: center;
-  width: fit-content;
+  width: 26.4rem;
   height: 32rem;
+  z-index: 2;
+
+}
+.speed-limit-sign {
+  border-color: black;
 
   .sign-labels {
     font-size: 4rem;
@@ -64,5 +72,44 @@ body {
     font-size: 8rem;
     font-weight: 700;
   }
+}
 
+.how-to-play-sign {
+  // display: none;
+  gap: 1rem;
+  border-color: white;
+  border-width: 1rem;
+  background-color: green;
+  color: white;
+
+
+  h2 {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+
+  p, button {
+    font-size: 2rem;
+  }
+  button {
+    color: white;
+    border: 0.2rem solid white;
+    padding: 0.5rem 2rem;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      transform: rotate(-10deg);
+      transition: 0.2s;
+    }
+  }
+}
+
+// javascript styles
+.move-in-from-right {
+  left: 500rem;
+}
+
+.move-out-to-left {
+  left: 500rem;
 }
