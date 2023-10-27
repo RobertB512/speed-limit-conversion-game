@@ -32,9 +32,19 @@ body {
   width: 5rem;
 }
 
+.how-to-play-sign, .white-border-wrapper {
+  position: relative;
+  top: 10rem;
+}
+
 .speed-limit-sign-wrapper {
   position: absolute;
-  right: 500rem;
+  transform: translate(5000%);
+  transition: 1s;
+}
+
+.white-border-wrapper {
+  border: 0.4rem solid white;
 }
 
 .sign {
@@ -42,8 +52,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
-  top: 10rem;
   background-color: white;
   border-width: 1.5rem;
   border-style: solid;
@@ -63,6 +71,10 @@ body {
 .speed-limit-sign .speed-limit-posting {
   font-size: 8rem;
   font-weight: 700;
+}
+
+.how-to-play-sign-wrapper {
+  transition: 2s;
 }
 
 .how-to-play-sign {
@@ -91,12 +103,12 @@ body {
   transition: 0.2s;
 }
 
-.move-in-from-right {
-  left: 500rem;
+.move-in {
+  transform: translate(0%);
 }
 
-.move-out-to-left {
-  left: 500rem;
+.move-out {
+  transform: translate(-5000%);
 }
 
 /*# sourceMappingURL=styles.css.map */

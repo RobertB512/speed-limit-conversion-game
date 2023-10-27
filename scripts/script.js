@@ -38,11 +38,22 @@ const generateSign = () => {
 	whiteBorderWrapper.append(speedLimitSign);
 };
 
-// const handlePlayBtn = () => {
-//   const playBtn = querySelector(".play-btn")
-//   const
+const startGame = () => {
+  const howToPlaySignWrapper = document.querySelector(".how-to-play-sign-wrapper")
+  const speedLimitSignWrapper = document.querySelector(".speed-limit-sign-wrapper")
 
-// }
+  generateSign();
 
+  howToPlaySignWrapper.classList.add("move-out")
+  speedLimitSignWrapper.classList.add("move-in")
 
-generateSign();
+}
+
+const handlePlayBtn = () => {
+  const playBtn = document.querySelector(".play-btn")
+  
+  playBtn.removeEventListener("click", startGame)
+  playBtn.addEventListener("click", startGame)
+}
+
+handlePlayBtn()
