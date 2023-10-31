@@ -70,7 +70,7 @@ body {
   padding: 1rem;
   text-align: center;
   width: 26.4rem;
-  height: 32rem;
+  height: fit-content;
   z-index: 2;
 
 }
@@ -118,6 +118,21 @@ body {
       transition: 0.2s;
     }
   }
+}
+.answer-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.possible-answer {
+  font-size: 3rem;
+  background-color: transparent;
+  border: 0.2rem solid black;
+  border-radius: 9999px;
+  padding: 1rem 0.5rem;
+  width: 100%;
 }
 
 // javascript styles
