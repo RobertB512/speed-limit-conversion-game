@@ -4,37 +4,37 @@ const generateSign = () => {
 	let selectedCountrySpeeds;
 
 	const usSpeeds = [
-		{ speed: 5, answers: [10, 20, 30], answer: 10 },
-		{ speed: 10, answers: [40, 10, 30], answer: 10 },
-		{ speed: 15, answers: [20, 24, 30], answer: 30 },
-		{ speed: 20, answers: { a: 32, b: 30, c: 50 }, answer: 30 },
+		{ speed: 10, answers: [15, 30, 25], answer: 15 },
+		{ speed: 15, answers: [15, 25, 30], answer: 25 },
+		{ speed: 20, answers: [40, 25, 30], answer: 30 },
 		{ speed: 25, answers: [40, 30, 50], answer: 40 },
-		{ speed: 30, answers: [60, 40, 50], answer: 50 },
-		{ speed: 35, answers: [50, 70, 60], answer: 50 },
-		{ speed: 40, answers: [70, 60, 80], answer: 60 },
-		{ speed: 45, answers: [70, 72, 80], answer: 70 },
-		{ speed: 50, answers: [85, 70, 80], answer: 80 },
-		{ speed: 55, answers: [90, 100, 85], answer: 90 },
-		{ speed: 60, answers: [96, 90, 100], answer: 90 },
-		{ speed: 65, answers: [100, 104, 110], answer: 100 },
-		{ speed: 70, answers: [120, 110, 112], answer: 110 },
-		{ speed: 75, answers: [120, 100, 130], answer: 10 },
-		{ speed: 80, answers: [128, 140, 130], answer: 130 },
-		{ speed: 85, answers: [140, 130, 136], answer: 130 },
+		{ speed: 30, answers: [55, 40, 50], answer: 50 },
+		{ speed: 35, answers: [55, 50, 65], answer: 55 },
+		{ speed: 40, answers: [70, 65, 55], answer: 65 },
+		{ speed: 45, answers: [70, 65, 80], answer: 70 },
+		{ speed: 50, answers: [90, 70, 80], answer: 80 },
+		{ speed: 55, answers: [90, 95, 80], answer: 90 },
+		{ speed: 60, answers: [105, 90, 95], answer: 95 },
+		{ speed: 65, answers: [95, 105, 110], answer: 105 },
+		{ speed: 70, answers: [120, 110, 105], answer: 110 },
+		{ speed: 75, answers: [120, 110, 130], answer: 120 },
+		{ speed: 80, answers: [120, 110, 130], answer: 130 },
 	];
 	const canadaSpeeds = [
-		{ speed: 10, answers: [5, 6, 10], answer: 5 },
-		{ speed: 20, answers: [12, 10, 15], answer: 5 },
-		{ speed: 30, answers: [10, 18, 20], answer: 5 },
-		{ speed: 40, answers: [5, 6, 10], answer: 5 },
-		{ speed: 50, answers: [5, 6, 10], answer: 5 },
-		{ speed: 60, answers: [5, 6, 10], answer: 5 },
-		{ speed: 70, answers: [5, 6, 10], answer: 5 },
-		{ speed: 80, answers: [5, 6, 10], answer: 5 },
-		{ speed: 90, answers: [5, 6, 10], answer: 5 },
-		{ speed: 100, answers: [5, 6, 10], answer: 5 },
-		{ speed: 110, answers: [5, 6, 10], answer: 5 },
-		{ speed: 120, answers: [5, 6, 10], answer: 5 },
+		{ speed: 10, answers: [5, 20, 10], answer: 5 },
+		{ speed: 20, answers: [20, 10, 5], answer: 10 },
+		{ speed: 30, answers: [10, 25, 20], answer: 20 },
+		{ speed: 40, answers: [30, 20, 25], answer: 25 },
+		{ speed: 50, answers: [25, 30, 35], answer: 30 },
+		{ speed: 60, answers: [35, 45, 30], answer: 35 },
+		{ speed: 70, answers: [50, 45, 35], answer: 45 },
+		{ speed: 80, answers: [50, 55, 45], answer: 50 },
+		{ speed: 90, answers: [50, 60, 55], answer: 55 },
+		{ speed: 100, answers: [60, 70, 55], answer: 60 },
+		{ speed: 110, answers: [60, 75, 70], answer: 70 },
+		{ speed: 120, answers: [75, 70, 80], answer: 75 },
+		{ speed: 130, answers: [75, 80, 85], answer: 80 },
+		{ speed: 140, answers: [75, 85, 80], answer: 85 },
 	];
 
 	const selectRandomCountry = Math.floor(Math.random() * 2);
@@ -82,9 +82,9 @@ const generateSign = () => {
 const generateAnswers = (speedObj, correctSpeed) => {
 	const speedLimitSign = document.querySelector(".speed-limit-sign");
 
-	console.log(
-		`Ansers for sign: speed: ${speedObj.speed}. Answers: ${speedObj.answers}. Answer: ${correctSpeed}`
-	);
+	// console.log(
+	// 	`Ansers for sign: speed: ${speedObj.speed}. Answers: ${speedObj.answers}. Answer: ${correctSpeed}`
+	// );
 
 	const answerSection = document.createElement("article");
 	// const possibleAnswer = document.createElement("div");
@@ -98,8 +98,6 @@ const generateAnswers = (speedObj, correctSpeed) => {
 
     answerSection.append(possibleAnswer)
 	});
-
-	// answerSection.append();
 
 	speedLimitSign.append(answerSection);
 };

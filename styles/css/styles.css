@@ -34,7 +34,7 @@ body {
 
 .how-to-play-sign, .white-border-wrapper {
   position: relative;
-  top: 10rem;
+  top: 13rem;
 }
 
 .speed-limit-sign-wrapper {
@@ -115,8 +115,9 @@ body {
   background-color: transparent;
   border: 0.2rem solid black;
   border-radius: 9999px;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem;
   width: 100%;
+  cursor: pointer;
 }
 
 .move-in {
@@ -125,6 +126,16 @@ body {
 
 .move-out {
   transform: translate(-5000%);
+}
+
+.right-answer {
+  background-color: green;
+  color: white;
+}
+
+.incorrect-answer {
+  background-color: red;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
