@@ -130,7 +130,7 @@ body {
   font-size: 3rem;
   background-color: transparent;
   border: 0.2rem solid black;
-  border-radius: 9999px;
+  border-radius: 1rem;
   padding: 0.5rem;
   width: 100%;
   cursor: pointer;
@@ -145,7 +145,7 @@ body {
   transform: translate(-5000%);
 }
 
-.right-answer {
+.correct-answer {
   background-color: green;
   color: white;
 }

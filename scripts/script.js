@@ -77,6 +77,7 @@ const generateSign = () => {
 		selectedCountrySpeeds[speedLimit],
 		selectedCountrySpeeds[speedLimit].answer
 	);
+
 };
 
 const generateAnswers = (speedObj, correctSpeed) => {
@@ -100,6 +101,7 @@ const generateAnswers = (speedObj, correctSpeed) => {
 	});
 
 	speedLimitSign.append(answerSection);
+  checkAnswers(correctSpeed);
 };
 
 const startGame = () => {
@@ -116,6 +118,41 @@ const startGame = () => {
 	speedLimitSignWrapper.classList.add("move-in");
 };
 
+// const getNextSign = () => {
+//   const currentSpeedSign = document.querySelector(".speed-limit-sign-wrapper");
+
+//   currentSpeedSign.classList.add(".move-out")
+//   generateSign()
+// }
+
+const handleAnswerChoice = (element, correctSpeed) => {
+  let haveGuessed = false;
+
+  if (Number(element.textContent) === Number(correctSpeed)) {
+    element.classList.add("correct-answer") 
+    haveGuessed = true
+  } else {
+    element.classList.add("incorrect-answer")
+    haveGuessed = true
+  }
+  console.log(`element.textContent: ${element.textContent}`)
+  console.log(`correctSpeed: ${correctSpeed}`)
+  console.log(`element: $(element)`)
+  console.log("checking answer")
+  
+  // haveGuessed ? setTimeout(getNextSign, 3000) : null;
+}
+
+const checkAnswers = (correctSpeed) => {
+  const possibleAnswers = document.querySelectorAll(".possible-answer")
+
+  possibleAnswers.forEach(answer => {
+    answer.removeEventListener("click", () => handleAnswerChoice(answer, correctSpeed))
+    answer.addEventListener("click", () => handleAnswerChoice(answer, correctSpeed))
+  })
+  console.log("pick an answer")
+
+}
 const handlePlayBtn = () => {
 	const playBtn = document.querySelector(".play-btn");
 
