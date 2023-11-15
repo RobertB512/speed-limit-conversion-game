@@ -77,7 +77,6 @@ const generateSign = () => {
 		selectedCountrySpeeds[speedLimit],
 		selectedCountrySpeeds[speedLimit].answer
 	);
-
 };
 
 const generateAnswers = (speedObj, correctSpeed) => {
@@ -92,16 +91,16 @@ const generateAnswers = (speedObj, correctSpeed) => {
 	answerSection.classList.add("answer-section");
 	// possibleAnswer.classList.add("possible-answer");
 
-	speedObj.answers.forEach(answer => {
+	speedObj.answers.forEach((answer) => {
 		const possibleAnswer = document.createElement("div");
 		possibleAnswer.classList.add("possible-answer");
-    possibleAnswer.textContent = answer
+		possibleAnswer.textContent = answer;
 
-    answerSection.append(possibleAnswer)
+		answerSection.append(possibleAnswer);
 	});
 
 	speedLimitSign.append(answerSection);
-  checkAnswers(correctSpeed);
+	checkAnswers(correctSpeed);
 };
 
 const startGame = () => {
@@ -118,46 +117,77 @@ const startGame = () => {
 	speedLimitSignWrapper.classList.add("move-in");
 };
 
-// const getNextSign = () => {
-//   const currentSpeedSign = document.querySelector(".speed-limit-sign-wrapper");
+// const removeSign = () => {
+// 	const currentSpeedSign = document.querySelector(".speed-limit-sign");
+// 	currentSpeedSign.remove();
+// };
 
-//   currentSpeedSign.classList.add(".move-out")
-//   generateSign()
-// }
+const getNextSign = () => {
+	const currentSpeedSign = document.querySelector(".speed-limit-sign-wrapper");
+	const speedLimitSign = document.querySelector(".speed-limit-sign");
+
+	currentSpeedSign.classList.remove("move-back");
+	currentSpeedSign.classList.add("move-out");
+	//  currentSpeedSign.classList.remove("move-out")
+	currentSpeedSign.classList.remove("move-in");
+
+	setTimeout(() => {
+		currentSpeedSign.classList.add("move-back");
+		currentSpeedSign.classList.remove("move-out");
+		speedLimitSign.remove();
+	}, 1000);
+
+	setTimeout(() => {
+		// generateSign();
+		currentSpeedSign.classList.remove("move-back");
+		// currentSpeedSign.classList.add("move-in");
+	}, 2000);
+
+	setTimeout(() => {
+		generateSign();
+		// currentSpeedSign.classList.remove("move-out");
+		// currentSpeedSign.classList.remove("move-back")
+		currentSpeedSign.classList.add("move-in");
+	}, 3000);
+};
 
 const handleAnswerChoice = (element, correctSpeed) => {
-  let haveGuessed = false;
+	let haveGuessed = false;
 
-  if (Number(element.textContent) === Number(correctSpeed)) {
-    element.classList.add("correct-answer") 
-    haveGuessed = true
-  } else {
-    element.classList.add("incorrect-answer")
-    haveGuessed = true
-  }
-  console.log(`element.textContent: ${element.textContent}`)
-  console.log(`correctSpeed: ${correctSpeed}`)
-  console.log(`element: $(element)`)
-  console.log("checking answer")
-  
-  // haveGuessed ? setTimeout(getNextSign, 3000) : null;
-}
+	if (Number(element.textContent) === Number(correctSpeed)) {
+		element.classList.add("correct-answer");
+		haveGuessed = true;
+	} else {
+		element.classList.add("incorrect-answer");
+		haveGuessed = true;
+	}
+	console.log(`element.textContent: ${element.textContent}`);
+	console.log(`correctSpeed: ${correctSpeed}`);
+	console.log(`element: $(element)`);
+	console.log("checking answer");
+
+	haveGuessed ? setTimeout(getNextSign, 1500) : null;
+};
 
 const checkAnswers = (correctSpeed) => {
-  const possibleAnswers = document.querySelectorAll(".possible-answer")
+	const possibleAnswers = document.querySelectorAll(".possible-answer");
 
-  possibleAnswers.forEach(answer => {
-    answer.removeEventListener("click", () => handleAnswerChoice(answer, correctSpeed))
-    answer.addEventListener("click", () => handleAnswerChoice(answer, correctSpeed))
-  })
-  console.log("pick an answer")
+	possibleAnswers.forEach((answer) => {
+		answer.removeEventListener("click", () =>
+			handleAnswerChoice(answer, correctSpeed)
+		);
+		answer.addEventListener("click", () =>
+			handleAnswerChoice(answer, correctSpeed)
+		);
+	});
+	console.log("pick an answer");
+};
 
-}
 const handlePlayBtn = () => {
 	const playBtn = document.querySelector(".play-btn");
 
-	playBtn.removeEventListener("click", startGame);
-	playBtn.addEventListener("click", startGame);
+	playBtn.removeEventListener("click", () => startGame());
+	playBtn.addEventListener("click", () => startGame());
 };
 
 handlePlayBtn();

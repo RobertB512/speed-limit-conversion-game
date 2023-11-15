@@ -48,7 +48,8 @@ body {
   width: 5rem;
 }
 
-.how-to-play-sign, .white-border-wrapper {
+.how-to-play-sign,
+.white-border-wrapper {
   position: relative;
   top: 13rem;
 }
@@ -122,7 +123,8 @@ body {
   line-height: 1;
 }
 
-.how-to-play-sign p, .how-to-play-sign button {
+.how-to-play-sign p,
+.how-to-play-sign button {
   font-size: 2rem;
 }
 
@@ -163,23 +165,30 @@ body {
   cursor: pointer;
 }
 
-.move-in {
-  -webkit-transform: translate(0%);
-          transform: translate(0%);
-}
-
 .move-out {
   -webkit-transform: translate(-5000%);
           transform: translate(-5000%);
 }
 
+.move-back {
+  display: none;
+}
+
+.move-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translate(0%);
+          transform: translate(0%);
+}
+
 .correct-answer {
-  background-color: #057805;
+  background-color: green;
   color: white;
 }
 
 .incorrect-answer {
-  background-color: #e30000;
+  background-color: red;
   color: white;
 }
 /*# sourceMappingURL=styles.css.map */
