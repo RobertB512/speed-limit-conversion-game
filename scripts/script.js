@@ -1,3 +1,24 @@
+const handlePlayBtn = () => {
+	const playBtn = document.querySelector(".play-btn");
+
+	playBtn.removeEventListener("click", () => startGame());
+	playBtn.addEventListener("click", () => startGame());
+};
+
+const startGame = () => {
+	const howToPlaySignWrapper = document.querySelector(
+		".how-to-play-sign-wrapper"
+	);
+	const speedLimitSignWrapper = document.querySelector(
+		".speed-limit-sign-wrapper"
+	);
+
+	generateSign();
+
+	howToPlaySignWrapper.classList.add("move-out");
+	speedLimitSignWrapper.classList.add("move-in");
+};
+
 const generateSign = () => {
 	const whiteBorderWrapper = document.querySelector(".white-border-wrapper");
 
@@ -92,7 +113,7 @@ const generateAnswers = (speedObj, correctSpeed) => {
 	// possibleAnswer.classList.add("possible-answer");
 
 	speedObj.answers.forEach((answer) => {
-		const possibleAnswer = document.createElement("div");
+		const possibleAnswer = document.createElement("button");
 		possibleAnswer.classList.add("possible-answer");
 		possibleAnswer.textContent = answer;
 
@@ -101,72 +122,6 @@ const generateAnswers = (speedObj, correctSpeed) => {
 
 	speedLimitSign.append(answerSection);
 	checkAnswers(correctSpeed);
-};
-
-const startGame = () => {
-	const howToPlaySignWrapper = document.querySelector(
-		".how-to-play-sign-wrapper"
-	);
-	const speedLimitSignWrapper = document.querySelector(
-		".speed-limit-sign-wrapper"
-	);
-
-	generateSign();
-
-	howToPlaySignWrapper.classList.add("move-out");
-	speedLimitSignWrapper.classList.add("move-in");
-};
-
-// const removeSign = () => {
-// 	const currentSpeedSign = document.querySelector(".speed-limit-sign");
-// 	currentSpeedSign.remove();
-// };
-
-const getNextSign = () => {
-	const currentSpeedSign = document.querySelector(".speed-limit-sign-wrapper");
-	const speedLimitSign = document.querySelector(".speed-limit-sign");
-
-	currentSpeedSign.classList.remove("move-back");
-	currentSpeedSign.classList.add("move-out");
-	//  currentSpeedSign.classList.remove("move-out")
-	currentSpeedSign.classList.remove("move-in");
-
-	setTimeout(() => {
-		currentSpeedSign.classList.add("move-back");
-		currentSpeedSign.classList.remove("move-out");
-		speedLimitSign.remove();
-	}, 1000);
-
-	setTimeout(() => {
-		// generateSign();
-		currentSpeedSign.classList.remove("move-back");
-		// currentSpeedSign.classList.add("move-in");
-	}, 2000);
-
-	setTimeout(() => {
-		generateSign();
-		// currentSpeedSign.classList.remove("move-out");
-		// currentSpeedSign.classList.remove("move-back")
-		currentSpeedSign.classList.add("move-in");
-	}, 3000);
-};
-
-const handleAnswerChoice = (element, correctSpeed) => {
-	let haveGuessed = false;
-
-	if (Number(element.textContent) === Number(correctSpeed)) {
-		element.classList.add("correct-answer");
-		haveGuessed = true;
-	} else {
-		element.classList.add("incorrect-answer");
-		haveGuessed = true;
-	}
-	console.log(`element.textContent: ${element.textContent}`);
-	console.log(`correctSpeed: ${correctSpeed}`);
-	console.log(`element: $(element)`);
-	console.log("checking answer");
-
-	haveGuessed ? setTimeout(getNextSign, 1500) : null;
 };
 
 const checkAnswers = (correctSpeed) => {
@@ -183,11 +138,59 @@ const checkAnswers = (correctSpeed) => {
 	console.log("pick an answer");
 };
 
-const handlePlayBtn = () => {
-	const playBtn = document.querySelector(".play-btn");
+const handleAnswerChoice = (element, correctSpeed) => {
+	let haveGuessed = false;
+	const possibleAnswers = document.querySelectorAll(".possible-answer");
 
-	playBtn.removeEventListener("click", () => startGame());
-	playBtn.addEventListener("click", () => startGame());
+	if (Number(element.textContent) === Number(correctSpeed)) {
+		element.classList.add("correct-answer");
+		haveGuessed = true;
+	} else {
+		element.classList.add("incorrect-answer");
+		haveGuessed = true;
+	}
+	console.log(`element.textContent: ${element.textContent}`);
+	console.log(`correctSpeed: ${correctSpeed}`);
+	console.log(`element: $(element)`);
+	console.log("checking answer");
+
+	if (haveGuessed) {
+		possibleAnswers.forEach((possibleAnswer) =>
+			possibleAnswer.setAttribute("disabled", "disabled")
+		);
+		setTimeout(getNextSign, 1500);
+	}
+
+	// haveGuessed ? setTimeout(getNextSign, 1500) : null;
+};
+
+const getNextSign = () => {
+	const currentSpeedSign = document.querySelector(".speed-limit-sign-wrapper");
+	const speedLimitSign = document.querySelector(".speed-limit-sign");
+
+	currentSpeedSign.classList.remove("move-back");
+	currentSpeedSign.classList.add("move-out");
+	//  currentSpeedSign.classList.remove("move-out")
+	currentSpeedSign.classList.remove("move-in");
+
+	setTimeout(() => {
+		currentSpeedSign.classList.add("move-back");
+		currentSpeedSign.classList.remove("move-out");
+		speedLimitSign.remove();
+	}, 250);
+
+	setTimeout(() => {
+		// generateSign();
+		currentSpeedSign.classList.remove("move-back");
+		// currentSpeedSign.classList.add("move-in");
+	}, 500);
+
+	setTimeout(() => {
+		generateSign();
+		// currentSpeedSign.classList.remove("move-out");
+		// currentSpeedSign.classList.remove("move-back")
+		currentSpeedSign.classList.add("move-in");
+	}, 750);
 };
 
 handlePlayBtn();
