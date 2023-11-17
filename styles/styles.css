@@ -20,7 +20,7 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  background: url("../../images/sandDunes.jpg") no-repeat center/cover;
+  background: url("../images/sandDunes.jpg") no-repeat center/cover;
   height: 100vh;
   overflow: hidden;
 }
