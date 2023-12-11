@@ -1,8 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -11,15 +10,9 @@ html {
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: center;
+  align-items: flex-end;
   background: url("../images/sandDunes.jpg") no-repeat center/cover;
   height: 100vh;
   overflow: hidden;
@@ -27,19 +20,10 @@ body {
 
 .sign-wrapper {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .sign-post {
@@ -51,14 +35,12 @@ body {
 .how-to-play-sign,
 .white-border-wrapper {
   position: relative;
-  top: 13rem;
+  top: 23rem;
 }
 
 .speed-limit-sign-wrapper {
   position: absolute;
-  -webkit-transform: translate(5000%);
-          transform: translate(5000%);
-  -webkit-transition: 1s;
+  transform: translate(5000%);
   transition: 1s;
 }
 
@@ -67,26 +49,16 @@ body {
 }
 
 .sign {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: white;
   border-width: 1.5rem;
   border-style: solid;
   padding: 1rem;
   text-align: center;
   width: 26.4rem;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   z-index: 2;
@@ -95,39 +67,34 @@ body {
 .speed-limit-sign {
   border-color: black;
 }
-
 .speed-limit-sign .sign-labels {
   font-size: 4rem;
 }
-
 .speed-limit-sign .speed-limit-posting {
   font-size: 8rem;
   font-weight: 700;
 }
 
 .how-to-play-sign-wrapper {
-  -webkit-transition: 2s;
   transition: 2s;
 }
 
 .how-to-play-sign {
   gap: 1rem;
+  top: 10rem;
   border-color: white;
   border-width: 1rem;
   background-color: green;
   color: white;
 }
-
 .how-to-play-sign h2 {
   font-size: 3.5rem;
   line-height: 1;
 }
-
 .how-to-play-sign p,
 .how-to-play-sign button {
   font-size: 2rem;
 }
-
 .how-to-play-sign button {
   color: white;
   border: 0.2rem solid white;
@@ -135,23 +102,28 @@ body {
   background-color: transparent;
   cursor: pointer;
 }
-
 .how-to-play-sign button:hover {
-  -webkit-transform: rotate(-10deg);
-          transform: rotate(-10deg);
-  -webkit-transition: 0.2s;
+  transform: rotate(-10deg);
   transition: 0.2s;
+}
+
+.score-wrapper {
+  top: 24rem;
+  width: 26.4rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: white;
+  border: 1.2rem solid black;
+}
+.score-wrapper .score {
+  font-weight: 700;
+  font-size: 5rem;
 }
 
 .answer-section {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
@@ -166,8 +138,7 @@ body {
 }
 
 .move-out {
-  -webkit-transform: translate(-5000%);
-          transform: translate(-5000%);
+  transform: translate(-5000%);
 }
 
 .move-back {
@@ -175,11 +146,8 @@ body {
 }
 
 .move-in {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-transform: translate(0%);
-          transform: translate(0%);
+  transform: translate(0%);
 }
 
 .correct-answer {
@@ -190,5 +158,4 @@ body {
 .incorrect-answer {
   background-color: red;
   color: white;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

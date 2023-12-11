@@ -43,7 +43,7 @@ body {
 .how-to-play-sign,
 .white-border-wrapper {
 	position: relative;
-	top: 13rem;
+	top: 23rem;
 }
 
 // speed limit sign
@@ -92,6 +92,7 @@ body {
 .how-to-play-sign {
 	// display: none;
 	gap: 1rem;
+	top: 10rem;
 	border-color: white;
 	border-width: 1rem;
 	background-color: green;
@@ -119,6 +120,22 @@ body {
 		}
 	}
 }
+
+.score-wrapper {
+	top: 24rem;
+	width: 26.4rem;
+	text-align: center;
+	padding: 1rem;
+	// font-size: 3rem;
+	background-color: white;
+	border: 1.2rem solid black;
+
+	.score {
+		font-weight: 700;
+		font-size: 5rem;
+	}
+}
+
 .answer-section {
 	width: 100%;
 	display: flex;

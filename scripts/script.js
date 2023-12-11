@@ -144,9 +144,11 @@ const handleAnswerChoice = (element, correctSpeed) => {
 
 	if (Number(element.textContent) === Number(correctSpeed)) {
 		element.classList.add("correct-answer");
+    handleScore(true)
 		haveGuessed = true;
 	} else {
 		element.classList.add("incorrect-answer");
+    handleScore(false)
 		haveGuessed = true;
 	}
 	console.log(`element.textContent: ${element.textContent}`);
@@ -163,6 +165,19 @@ const handleAnswerChoice = (element, correctSpeed) => {
 
 	// haveGuessed ? setTimeout(getNextSign, 1500) : null;
 };
+
+
+const handleScore = (pointStatus) => {
+  const totalRight = document.querySelector(".total-right");
+  const totalSigns = document.querySelector(".total-signs");
+
+  pointStatus === true
+		? (totalRight.textContent = `${Number(totalRight.textContent) + 1}`)
+		: null;
+
+    totalSigns.textContent = `${Number(totalSigns.textContent) + 1}`;
+  
+ }
 
 const getNextSign = () => {
 	const currentSpeedSign = document.querySelector(".speed-limit-sign-wrapper");
